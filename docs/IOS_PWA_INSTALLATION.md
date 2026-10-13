@@ -14,7 +14,7 @@ The service-worker registration is in the web client on branch `mobile/pwa-shell
 2. Tap the Share button.
 3. Tap Add to Home Screen.
 4. Leave the name as JanaVignanam and tap Add.
-5. Open JanaVignanam from the home screen. It should open without Safari's address bar (`display: standalone`).
+5. Open JanaVignanam from the home screen. It should open without Safari's address bar (`display: standalone`) and show the stored articles. The full website remains available when the same address is opened in a Safari tab.
 
 You need a network to sign in and to load news. If the phone is offline, the registered worker can show the offline page for a navigation. API responses are not kept for offline reading.
 

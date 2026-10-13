@@ -1,6 +1,6 @@
 # Feature matrix
 
-The Android package and the iPhone home-screen app use the same screens. Nothing below was removed to make packaging easier.
+The Android app, and the iPhone icon after Add to Home Screen, show the stored article list only. The website in a browser tab still has the full workspace.
 
 | Feature | In the client | Mobile behavior |
 | --- | --- | --- |

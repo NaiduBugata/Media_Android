@@ -6,7 +6,9 @@ Base URL baked into the APK:
 
 Local web development is unchanged. An empty `VITE_API_BASE_URL` makes the client call `/api`, and Vite proxies that to `http://127.0.0.1:5000`. The APK never uses that proxy. Paths are prefixed once: `newsApiBase()` appends `/api` when the origin does not already end in `/api`, and callers request `/news` or `/api/workspace/login`.
 
-Checked against the Nest controllers. These are the calls the packaged app can make because they already exist in the client:
+The installed phone app calls only `GET /api/news`. That response is the article list already stored in Neon. The phone does not sign in, save records, start the news pipeline, or send WhatsApp. Search on the phone filters that downloaded list. Reload repeats the same read.
+
+The website still uses the wider client. These are the calls that client can make:
 
 | Client use | Method and path | Auth |
 | --- | --- | --- |
