@@ -1,6 +1,6 @@
 # GitHub Actions
 
-Workflows live in `.github/workflows/`. Third-party actions are pinned to commit SHAs. Permissions are `contents: read` except the tagged release, which needs `contents: write` to publish the APK.
+Workflows live in `.github/workflows/`. Checkout, Node, Java, upload, and release actions are pinned to commit SHAs. The Android SDK is installed from Google's command-line tools, because the older setup action still requests the removed `tools` package and fails. Permissions are `contents: read` except the tagged release, which needs `contents: write` to publish the APK.
 
 There is no schedule. Concurrency cancels a stale pull-request or manual build. A release is not cancelled by a second run on the same tag.
 
