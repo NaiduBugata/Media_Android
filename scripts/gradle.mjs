@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -11,9 +12,17 @@ if (!args.length) {
   process.exit(1);
 }
 
+if (process.platform !== "win32") {
+  fs.chmodSync(path.join(android, "gradlew"), 0o755);
+}
+
 const result = spawnSync(gradle, args, {
   cwd: android,
   stdio: "inherit",
   shell: process.platform === "win32",
 });
+if (result.error) {
+  console.error(result.error.message);
+  process.exit(1);
+}
 process.exit(result.status ?? 1);

@@ -42,4 +42,8 @@ One of `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIA
 
 ## Gradle asks for a newer Java
 
-Use JDK 21 for this Capacitor 8 / AGP 8.13 project. The workflow installs Temurin 21.
+Use JDK 21 for this Capacitor 8 / AGP 8.13 project. The workflow installs Temurin 21. JDK 25 fails this Gradle release with `Unsupported class file major version 69`.
+
+## Actions exits at `gradlew` with no Gradle output
+
+`android/gradlew` has to be executable on Linux. `scripts/gradle.mjs` sets that bit before it runs. A checkout from Windows can otherwise leave it non-executable, and the process exits 1 immediately.
