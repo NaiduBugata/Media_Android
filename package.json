@@ -1,0 +1,24 @@
+{
+  "name": "janavignanam-android",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Capacitor Android wrapper for the JanaVignanam web client. The React app stays in NaiduBugata/janavignanam.",
+  "scripts": {
+    "sync": "node scripts/sync-frontend.mjs",
+    "cap:sync": "node scripts/sync-frontend.mjs && npx cap sync android && node scripts/brand-android.mjs",
+    "validate": "node scripts/validate.mjs",
+    "android:debug": "npm run cap:sync && npm run gradle -- assembleDebug",
+    "android:release": "npm run cap:sync && npm run gradle -- assembleRelease",
+    "gradle": "node scripts/gradle.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.3",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.3",
+    "typescript": "~5.7.3"
+  }
+}
